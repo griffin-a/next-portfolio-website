@@ -36,7 +36,7 @@ const About = () => {
             placeholder="blur"
           />
 
-          <div className="flex mx-auto text-center">
+          <div className="flex items-center justify-center">
             <a href="#facebook">
               <FontAwesomeIcon
                 icon={faFacebook}
