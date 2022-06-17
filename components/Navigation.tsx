@@ -15,6 +15,19 @@ const Navigation = () => {
             Griffin
           </a>
         </Link>
+
+        <span className="container px-4 mx-auto lg:max-w-4xl flex justify-end">
+          <Link href="#">
+            <a className="float-right px-4">Test 1</a>
+          </Link>
+          <Link href="#">
+            <a className="float-right px-4">Test 2</a>
+          </Link>
+          <Link href="#">
+            <a className="float-right px-4">Test 3</a>
+          </Link>
+        </span>
+
         <ThemeSwitch />
       </div>
     </div>
