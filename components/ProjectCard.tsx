@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 type ProjectCardProps = {
-  imagePath: string;
+  imageName: string;
   title: string;
   description: string;
   projectUrl: string;
 };
 
 const ProjectCard = ({
-  imagePath,
+  imageName,
   title,
   description,
   projectUrl,
@@ -20,13 +20,13 @@ const ProjectCard = ({
         className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <Image
-          src={imagePath}
+          src={`/../public/${imageName}`}
           alt={title}
           priority={true}
           className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
           width={400}
           height={400}
-          placeholder="blur"
+        //   placeholder="blur"
         />
 
         <div className="flex flex-col justify-between p-4 leading-normal">
