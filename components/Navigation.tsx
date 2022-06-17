@@ -17,14 +17,14 @@ const Navigation = () => {
         </Link>
 
         <span className="container px-4 mx-auto lg:max-w-4xl flex justify-end">
-          <Link href="#">
-            <a className="float-right px-4">Test 1</a>
+          <Link href="/">
+            <a className="float-right px-4 hover:text-sky-500">About</a>
           </Link>
-          <Link href="#">
-            <a className="float-right px-4">Test 2</a>
+          <Link href="/projects">
+            <a className="float-right px-4 hover:text-sky-500">Projects</a>
           </Link>
-          <Link href="#">
-            <a className="float-right px-4">Test 3</a>
+          <Link href="/contact">
+            <a className="float-right px-4 hover:text-sky-500">Contact</a>
           </Link>
         </span>
 
