@@ -31,6 +31,8 @@ const Contact = () => {
   const validateForm = () => {
     let formIsValid = true;
     let errors = {};
+
+    const emailRegex = /\S+@\S+\.\S+/;
     
     if (!formData.firstName) {
       errors = {
@@ -57,6 +59,15 @@ const Contact = () => {
       };
 
       formIsValid = false;
+    }
+
+    if (!emailRegex.test(formData.email!)) {
+        errors = {
+            ...errors,
+            email: "Please enter a valid email!"
+        };
+
+        formIsValid = false
     }
 
     if (!formData.message) {
