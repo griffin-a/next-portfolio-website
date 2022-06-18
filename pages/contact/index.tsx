@@ -103,7 +103,7 @@ const Contact = () => {
               required={true}
               onChange={(event) => onFormChange(event, "firstName")}
             />
-            <p className="text-red-500 text-xs italic">{errors.firstName}</p>
+            <p className="dark:text-red-200 text-red-500 text-s italic">{errors.firstName}</p>
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white">
@@ -117,7 +117,7 @@ const Contact = () => {
               required={true}
               onChange={(event) => onFormChange(event, "lastName")}
             />
-            <p className="text-red-500 text-xs italic">{errors.lastName}</p>
+            <p className="dark:text-red-200 text-red-500 text-s italic">{errors.lastName}</p>
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -132,7 +132,7 @@ const Contact = () => {
               required={true}
               onChange={(event) => onFormChange(event, "email")}
             />
-            <p className="text-red-500 text-xs italic">{errors.email}</p>
+            <p className="dark:text-red-200 text-red-500 text-s italic">{errors.email}</p>
 
             <p className="text-gray-600 text-xs italic dark:text-white">
               Some tips - as long as needed
@@ -149,7 +149,7 @@ const Contact = () => {
               id="message"
               onChange={(event) => onFormChange(event, "message")}
             ></textarea>
-            <p className="text-red-500 text-xs italic">{errors.message}</p>
+            <p className="dark:text-red-200 text-red-500 text-s italic">{errors.message}</p>
 
             <p className="text-gray-600 text-xs italic dark:text-white">
               Re-size can be disabled by set by resize-none / resize-y /
