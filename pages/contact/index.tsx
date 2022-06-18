@@ -149,14 +149,13 @@ const Contact = () => {
         <div className="md:flex md:items-center">
           <div className="md:w-1/3">
             <button
-              className="shadow bg-blue-600 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              className="shadow bg-blue-600 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:bg-gray-600"
               type="button"
               onClick={() => {
                 validateForm();
-                console.log(errors);
               }}
               disabled={
-                !formData.firstName || !formData.lastName || !formData.email || !formData.email
+                !formData.firstName || !formData.lastName || !formData.email || !formData.email || !formData.message
               }
             >
               Send
