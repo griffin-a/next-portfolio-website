@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 
-interface ContactData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-}
+type ContactData = {
+  firstName?: string | undefined;
+  lastName?: string | undefined;
+  email?: string | undefined;
+  message?: string | undefined;
+};
+
+type FormErrors = {
+  firstName?: string | undefined;
+  lastName?: string | undefined;
+  email?: string | undefined;
+  message?: string | undefined;
+};
 
 const Contact = () => {
-  const [formData, setFormData] = useState<ContactData | {}>({});
+  const [formData, setFormData] = useState<ContactData>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const onFormChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -18,6 +26,51 @@ const Contact = () => {
       ...formData,
       [param]: event.target.value,
     });
+  };
+
+  const validateForm = () => {
+    let formIsValid = true;
+    let errors = {};
+    
+    if (!formData.firstName) {
+      errors = {
+        ...errors,
+        firstName: "Please enter your first name!",
+      };
+
+      formIsValid = false;
+    }
+
+    if (!formData.lastName) {
+      errors = {
+        ...errors,
+        lastName: "Please enter your last name!",
+      };
+
+      formIsValid = false;
+    }
+
+    if (!formData.email) {
+      errors = {
+        ...errors,
+        email: "Please enter your email!",
+      };
+
+      formIsValid = false;
+    }
+
+    if (!formData.message) {
+      errors = {
+        ...errors,
+        message: "Please enter a message!",
+      };
+
+      formIsValid = false;
+    }
+
+    setErrors(errors);
+
+    return formIsValid;
   };
 
   return (
@@ -37,13 +90,9 @@ const Contact = () => {
               type="text"
               placeholder="Jane"
               required={true}
-              onChange={(event) =>
-                onFormChange(event, "firstName")
-              }
+              onChange={(event) => onFormChange(event, "firstName")}
             />
-            {/* <p className="text-red-500 text-xs italic">
-              Please fill out this field.
-            </p> */}
+            <p className="text-red-500 text-xs italic">{errors.firstName}</p>
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white">
@@ -57,6 +106,7 @@ const Contact = () => {
               required={true}
               onChange={(event) => onFormChange(event, "lastName")}
             />
+            <p className="text-red-500 text-xs italic">{errors.lastName}</p>
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -71,6 +121,8 @@ const Contact = () => {
               required={true}
               onChange={(event) => onFormChange(event, "email")}
             />
+            <p className="text-red-500 text-xs italic">{errors.email}</p>
+
             <p className="text-gray-600 text-xs italic dark:text-white">
               Some tips - as long as needed
             </p>
@@ -86,6 +138,8 @@ const Contact = () => {
               id="message"
               onChange={(event) => onFormChange(event, "message")}
             ></textarea>
+            <p className="text-red-500 text-xs italic">{errors.message}</p>
+
             <p className="text-gray-600 text-xs italic dark:text-white">
               Re-size can be disabled by set by resize-none / resize-y /
               resize-x / resize
@@ -98,7 +152,8 @@ const Contact = () => {
               className="shadow bg-blue-600 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
               type="button"
               onClick={() => {
-                console.log(formData);
+                validateForm();
+                console.log(errors);
               }}
             >
               Send
