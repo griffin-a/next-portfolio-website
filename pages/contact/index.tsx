@@ -155,6 +155,9 @@ const Contact = () => {
                 validateForm();
                 console.log(errors);
               }}
+              disabled={
+                !formData.firstName || !formData.lastName || !formData.email || !formData.email
+              }
             >
               Send
             </button>
