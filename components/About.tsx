@@ -26,7 +26,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10">
-          <Image
+          {/* <Image
             src={profile}
             alt="Profile"
             priority={true}
@@ -34,7 +34,7 @@ const About = () => {
             width={250}
             height={250}
             placeholder="blur"
-          />
+          /> */}
 
           <div className="flex items-center justify-center">
             <a href="#facebook">

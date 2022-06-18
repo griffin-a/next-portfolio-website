@@ -1,8 +1,29 @@
+import { useEffect, useState } from "react";
+
+interface ContactData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
+
 const Contact = () => {
+  const [formData, setFormData] = useState<ContactData | {}>({});
+
+  const onFormChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    param: string
+  ) => {
+    setFormData({
+      ...formData,
+      [param]: event.target.value,
+    });
+  };
+
   return (
     <div>
       <h3 className="text-2xl font-bold text-gray-900 lg:text-5xl dark:text-white text-center py-10">
-        Contact   
+        Contact
       </h3>
       <form className="mx-auto text-left w-full max-w-lg">
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -16,6 +37,9 @@ const Contact = () => {
               type="text"
               placeholder="Jane"
               required={true}
+              onChange={(event) =>
+                onFormChange(event, "firstName")
+              }
             />
             {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
@@ -31,6 +55,7 @@ const Contact = () => {
               type="text"
               placeholder="Doe"
               required={true}
+              onChange={(event) => onFormChange(event, "lastName")}
             />
           </div>
         </div>
@@ -44,6 +69,7 @@ const Contact = () => {
               id="email"
               type="email"
               required={true}
+              onChange={(event) => onFormChange(event, "email")}
             />
             <p className="text-gray-600 text-xs italic dark:text-white">
               Some tips - as long as needed
@@ -58,6 +84,7 @@ const Contact = () => {
             <textarea
               className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
               id="message"
+              onChange={(event) => onFormChange(event, "message")}
             ></textarea>
             <p className="text-gray-600 text-xs italic dark:text-white">
               Re-size can be disabled by set by resize-none / resize-y /
@@ -70,7 +97,9 @@ const Contact = () => {
             <button
               className="shadow bg-blue-600 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
               type="button"
-              onClick={() => console.log("Submitted")}
+              onClick={() => {
+                console.log(formData);
+              }}
             >
               Send
             </button>
