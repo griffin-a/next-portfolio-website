@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="space-y-14 lg:space-y-24">
       <Head>
-        <title>Griffin Almquist</title>
+        <title>Jared Bartlett-Wright</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

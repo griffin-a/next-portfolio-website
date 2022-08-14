@@ -12,7 +12,7 @@ const Navigation = () => {
               "font-medium tracking-wider transition-colors text-gray-900 hover:text-sky-500 uppercase dark:text-white"
             }
           >
-            Griffin
+            Jared
           </a>
         </Link>
 
