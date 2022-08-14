@@ -44,12 +44,12 @@ const Projects = () => {
         projectUrl="https://book-web-app-235.herokuapp.com/"
       />
 
-      {/* <ProjectCard
-        imageName="concert.jpeg"
-        title="Concert Booking Website"
-        description="A full-stack concert booking service that supports registering and logging in. Group project"
-        projectUrl="#"
-      /> */}
+      <ProjectCard
+        imageName="movie.jpeg"
+        title="Movie/TV Browser"
+        description="An application that calls an external API to display search results for the entered title search query."
+        projectUrl="https://movie-tv-searcher.netlify.app"
+      />
     </div>
   );
 };
