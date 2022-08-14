@@ -26,7 +26,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex-shrink-0 lg:mt-12 lg:px-4 mb-10">
-          * <Image
+           <Image
             src={profile}
             alt="Profile"
             priority={true}
@@ -37,21 +37,21 @@ const About = () => {
           /> 
 
           <div className="flex items-center justify-center">
-            <a href="#facebook">
+            <a href="https://www.facebook.com/jared.bartlettwright">
               <FontAwesomeIcon
                 icon={faFacebook}
                 style={{ fontSize: 40, paddingRight: 20 }}
               />
             </a>
 
-            <a href="#linkedin">
+            <a href="https://www.linkedin.com/in/jared-bartlett-wright-053446240/">
               <FontAwesomeIcon
                 icon={faLinkedin}
                 style={{ fontSize: 40, paddingRight: 20 }}
               />
             </a>
 
-            <a href="#github">
+            <a href="https://github.com/Jared-bw">
               <FontAwesomeIcon
                 icon={faGithub}
                 style={{ fontSize: 40, paddingRight: 20 }}
