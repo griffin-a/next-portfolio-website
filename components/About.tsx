@@ -37,21 +37,21 @@ const About = () => {
           />
 
           <div className="flex items-center justify-center">
-            <a href="#facebook">
+            <a href="https://www.facebook.com/griffin.almquist.16">
               <FontAwesomeIcon
                 icon={faFacebook}
                 style={{ fontSize: 40, paddingRight: 20 }}
               />
             </a>
 
-            <a href="#linkedin">
+            <a href="https://www.linkedin.com/in/griffin-almquist-55035620a/">
               <FontAwesomeIcon
                 icon={faLinkedin}
                 style={{ fontSize: 40, paddingRight: 20 }}
               />
             </a>
 
-            <a href="#github">
+            <a href="https://github.com/griffin-a">
               <FontAwesomeIcon
                 icon={faGithub}
                 style={{ fontSize: 40, paddingRight: 20 }}

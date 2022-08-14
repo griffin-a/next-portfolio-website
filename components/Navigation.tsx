@@ -23,7 +23,7 @@ const Navigation = () => {
           <Link href="/projects">
             <a className="float-right px-4 hover:text-sky-500">Projects</a>
           </Link>
-          <Link href="/contact">
+          <Link href="mailto:griffinalmquist@gmail.com">
             <a className="float-right px-4 hover:text-sky-500">Contact</a>
           </Link>
         </span>
