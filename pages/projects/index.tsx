@@ -47,7 +47,7 @@ const Projects = () => {
       <ProjectCard
         imageName="movie.jpeg"
         title="Movie/TV Browser"
-        description="An application that calls an external API to display search results for the entered title search query."
+        description="An application that calls an external API to display search results for the entered title search"
         projectUrl="https://movie-tv-searcher.netlify.app"
       />
     </div>
